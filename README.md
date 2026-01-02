@@ -11,7 +11,7 @@ Bu proje, PHP 8+ ve MySQL 8+ için kurumsal mimaride örnek bir dijital ürün s
 Kurulum
 1. PHP 8+ ve MySQL 8+ kurun.
 2. Depoyu klonlayın veya dosyaları workspace içine koyun.
-3. .env.example dosyasını kopyalayın ve `project-root/.env` olarak düzenleyin.
+3. `.env.example` dosyasını kopyalayın ve proje kökünde `.env` olarak düzenleyin.
 4. Composer bağımlılıklarını yükleyin:
 
 ```bash
