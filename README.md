@@ -1,37 +1,15 @@
-# Webing Design - Marketplace (PHP + MySQL)
+PHP Script & Uygulama Satış Paneli - Scaffold
 
-Bu proje, PHP 8+ ve MySQL 8+ için kurumsal mimaride örnek bir dijital ürün satış platformu iskeletidir.
+Bu depo, PHP 8+ + MySQL 8+ kullanan, MVC tarzı basit ve genişletilebilir bir script satış platformu iskeleti sunar.
 
-Özellikler
-- Katmanlı mimari (Presentation / Application / Domain / Infrastructure)
-- PDO + prepared statements
-- PSR-4 autoloading
-- .env yapılandırması (vlucas/phpdotenv)
+Kurulum (özet):
 
-Kurulum
-1. PHP 8+ ve MySQL 8+ kurun.
-2. Depoyu klonlayın veya dosyaları workspace içine koyun.
-3. `.env.example` dosyasını kopyalayın ve proje kökünde `.env` olarak düzenleyin.
-4. Composer bağımlılıklarını yükleyin:
+1. Dosyaları sunucuya yükleyin (public/ kökü web root olmalı).
+2. `sql/schema.sql` dosyasını phpMyAdmin ile yeni bir veritabanına import edin.
+3. `.env.example` dosyasını kopyalayıp `.env` olarak düzenleyin ve DB bilgilerinizi ekleyin.
+4. `public` klasörünü web sunucunuzun document root'u olarak ayarlayın.
+5. Varsayılan admin: `admin@local.test` / `Password123!` (DB importunda oluşturulur).
 
-```bash
-composer install
-```
+Bu scaffold; config, DB bağlantısı, basit auth, admin panel iskeleti, site ayarları ve örnek tablolar içerir.
 
-5. Veritabanını oluşturun ve `database/migrations/001_create_tables.sql` dosyasındaki SQL'i import edin (phpMyAdmin veya CLI ile).
-6. Geliştirme sunucusunu çalıştırın:
-
-```bash
-php -S 127.0.0.1:8080 -t public
-```
-
-Testler
-```bash
-composer test
-```
-
-Varsayılan admin
-- e-posta: admin@example.com
-- parola: ChangeMe123!
-
-Daha fazla bilgi için `docs/` veya proje içindeki comments/ PHPDoc'ları inceleyin.
+Sonraki adımlar: ürün CRUD, lisans üretimi, ödeme entegrasyonu ve detaylı admin ayarları eklenmelidir.
