@@ -14,12 +14,18 @@ class User extends Model
 
     public function create(array $data)
     {
+        // Ensure password is hashed before storing
+        $password = $data['password'] ?? null;
+        if ($password && password_get_info($password)['algo'] === 0) {
+            $password = password_hash($password, PASSWORD_DEFAULT);
+        }
+
         $stmt = $this->db->pdo()->prepare('INSERT INTO users (role_id,name,email,password,created_at) VALUES (?,?,?,?,NOW())');
         return $stmt->execute([
             $data['role_id'] ?? 2,
             $data['name'],
             $data['email'],
-            $data['password']
+            $password
         ]);
     }
 }
